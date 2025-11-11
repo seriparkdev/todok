@@ -3,8 +3,7 @@ import { defineConfig } from '@pandacss/dev';
 
 export default defineConfig({
   preflight: true,
-  include: ['./src/components/**/*.{ts,tsx,js,jsx}', './app/**/*.{ts,tsx,js,jsx}'],
-
+  include: ['./src/**/*.{js,jsx,ts,tsx}', './app/**/*.{js,jsx,ts,tsx}', './stories/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
       tokens: {
