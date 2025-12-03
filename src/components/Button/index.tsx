@@ -106,31 +106,16 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: 'sm' | 'md' | 'lg';
   fullWidth?: boolean;
   children: ReactNode;
-  'aria-label'?: string;
 }
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  (
-    {
-      variant = 'primary',
-      size = 'md',
-      fullWidth = false,
-      disabled = false,
-      className,
-      children,
-      'aria-label': ariaLabel,
-      'aria-describedby': ariaDescribedby,
-      ...props
-    },
-    ref
-  ) => {
+  ({ variant = 'primary', size = 'md', fullWidth = false, disabled = false, className, children, ...props }, ref) => {
     return (
       <button
         ref={ref}
         type="button"
         disabled={disabled}
         aria-disabled={disabled}
-        aria-label={ariaLabel}
         className={cx(buttonStyles({ variant, size, fullWidth }), className)}
         {...props}
       >
