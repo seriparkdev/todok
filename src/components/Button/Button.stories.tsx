@@ -4,10 +4,6 @@ import { Button } from '.';
 const meta = {
   title: 'Components/Button',
   component: Button,
-  parameters: {
-    layout: 'centered',
-  },
-  tags: ['autodocs'],
   argTypes: {
     variant: {
       control: 'select',
