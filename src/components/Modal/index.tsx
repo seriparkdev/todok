@@ -79,6 +79,9 @@ const Content = forwardRef<HTMLDivElement, ContentProps>(({ children, className,
   );
 });
 
+Container.displayName = 'Container';
+Content.displayName = 'Content';
+
 export const Modal = Object.assign(Container, {
   Content,
 });

@@ -31,7 +31,7 @@ const meta = {
 } satisfies Meta<typeof Button>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof Button>;
 
 // 기본 버튼
 export const Primary: Story = {
@@ -104,42 +104,4 @@ export const Disabled: Story = {
     disabled: true,
     children: 'Disabled Button',
   },
-};
-
-// 모든 변형 조합
-export const AllVariants: Story = {
-  args: {
-    children: 'Button',
-  },
-  render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', alignItems: 'flex-start' }}>
-      <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-        <Button variant="primary">Primary</Button>
-        <Button variant="secondary">Secondary</Button>
-        <Button variant="outline">Outline</Button>
-      </div>
-      <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', alignItems: 'center' }}>
-        <Button variant="primary" size="sm">
-          Small
-        </Button>
-        <Button variant="primary" size="md">
-          Medium
-        </Button>
-        <Button variant="primary" size="lg">
-          Large
-        </Button>
-      </div>
-      <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-        <Button variant="primary" disabled>
-          Disabled Primary
-        </Button>
-        <Button variant="secondary" disabled>
-          Disabled Secondary
-        </Button>
-        <Button variant="outline" disabled>
-          Disabled Outline
-        </Button>
-      </div>
-    </div>
-  ),
 };
