@@ -4,6 +4,9 @@ import { Button } from '.';
 const meta = {
   title: 'Components/Button',
   component: Button,
+  parameters: {
+    layout: 'padded',
+  },
   argTypes: {
     variant: {
       control: 'select',
@@ -90,9 +93,6 @@ export const FullWidth: Story = {
     size: 'md',
     fullWidth: true,
     children: 'Full Width Button',
-  },
-  parameters: {
-    layout: 'padded',
   },
 };
 
