@@ -22,6 +22,7 @@
     "@pandacss/dev": "^1.4.2",
     "@storybook/addon-docs": "^10.0.6",
     "@storybook/nextjs-vite": "^10.0.6",
+    "@svgr/webpack": "^8.1.0",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
