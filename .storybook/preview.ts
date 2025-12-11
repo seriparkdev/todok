@@ -10,7 +10,6 @@ const preview: Preview = {
       },
       expanded: true,
     },
-    layout: 'centered',
     tags: ['autodocs'],
   },
 };
