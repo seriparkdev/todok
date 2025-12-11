@@ -85,7 +85,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
             {error}
           </p>
         )}
-        {helperText && (
+        {!error && helperText && (
           <p id={helperTextId} className={helperTextStyles} role="alert">
             {helperText}
           </p>
