@@ -9,6 +9,19 @@ const config: StorybookConfig = {
     options: {},
   },
   webpackFinal: async config => {
+    config.module = config.module || {};
+    config.module.rules = config.module.rules || [];
+
+    const imageRule = config.module.rules.find(rule => rule?.['test']?.test('.svg'));
+    if (imageRule) {
+      imageRule['exclude'] = /\.svg$/;
+    }
+
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    });
+
     if (config.resolve) {
       config.resolve.alias = {
         ...config.resolve.alias,
@@ -16,6 +29,7 @@ const config: StorybookConfig = {
         '@styled': path.resolve(process.cwd(), 'styled-system'),
       };
     }
+
     return config;
   },
 };
