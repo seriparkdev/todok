@@ -1,11 +1,7 @@
-import type { Metadata } from 'next';
+import { QueryClientProvider } from '@tanstack/react-query';
 import './globals.css';
+import { queryClient } from '@/lib/queryClient';
 import { Toast } from '@/components/Toast';
-
-export const metadata: Metadata = {
-  title: '토독이',
-  description: '토독이는 초성을 맞춰 문장을 완성하는 게임입니다.',
-};
 
 export default function RootLayout({
   children,
@@ -23,8 +19,10 @@ export default function RootLayout({
         />
       </head>
       <body>
-        {children}
-        <Toast />
+        <QueryClientProvider client={queryClient}>
+          {children}
+          <Toast />
+        </QueryClientProvider>
       </body>
     </html>
   );

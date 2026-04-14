@@ -1,8 +1,26 @@
+'use client';
+
 import { styled } from '@styled/jsx';
 import KakaoIcon from '@/assets/logo/kakao.png';
 import Image from 'next/image';
 
+const getKakaoAuthUrl = () => {
+  const params = new URLSearchParams({
+    client_id: process.env.NEXT_PUBLIC_KAKAO_REST_API_KEY!,
+    redirect_uri: process.env.NEXT_PUBLIC_KAKAO_REDIRECT_URI!,
+    response_type: 'code',
+  });
+
+  const AUTHORIZE_URL = 'https://kauth.kakao.com/oauth/authorize?';
+
+  return `${AUTHORIZE_URL}${params.toString()}`;
+};
+
 export default function LoginPage() {
+  const handleKakaoLogin = () => {
+    window.location.href = getKakaoAuthUrl();
+  };
+
   return (
     <Main>
       <HeadingSection>
@@ -10,7 +28,7 @@ export default function LoginPage() {
         <Description>초성을 맞춰 문장을 완성하는 게임</Description>
       </HeadingSection>
 
-      <KakaoButton>
+      <KakaoButton onClick={handleKakaoLogin}>
         <KakaoIconWrapper>
           <Image src={KakaoIcon} alt="kakao logo" width={20} height={20} />
         </KakaoIconWrapper>
