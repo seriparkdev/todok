@@ -1,0 +1,19 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")       // 커넥션 풀러 (런타임용)
+  directUrl = env("DIRECT_URL")         // 직접 연결 (마이그레이션용)
+}
+
+model User {
+  id           Int      @id @default(autoincrement())
+  kakaoId      String   @unique
+  nickname     String?
+  profileImage String?
+  email        String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
