@@ -16,8 +16,3 @@ export const kakaoLogin = async (code: string) => {
   const { data } = await axiosInstance.post<{ user: User }>(ENDPOINTS.AUTH.KAKAO, { code });
   return data;
 };
-
-export const logout = async () => {
-  const { data } = await axiosInstance.post(ENDPOINTS.AUTH.LOGOUT);
-  return data;
-};

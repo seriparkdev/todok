@@ -1,5 +1,5 @@
 import { queryOptions } from '@tanstack/react-query';
-import { fetchMe, kakaoLogin, logout } from './api';
+import { fetchMe, kakaoLogin } from '../api/auth';
 
 export const authQueryOptions = {
   all: () => ['auth'] as const,
@@ -13,9 +13,5 @@ export const authQueryOptions = {
 
   kakaoLogin: () => ({
     mutationFn: (code: string) => kakaoLogin(code),
-  }),
-
-  logout: () => ({
-    mutationFn: logout,
   }),
 };

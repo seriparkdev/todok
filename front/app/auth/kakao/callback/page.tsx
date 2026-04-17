@@ -6,7 +6,7 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { useToastStore } from '@/components/Toast/toastStore';
 import { useEffect } from 'react';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { authQueryOptions } from './queries/queries';
+import { authQueryOptions } from './queries/auth';
 import { PATHS } from '@/constants/paths';
 
 export default function KakaoCallbackPage() {
