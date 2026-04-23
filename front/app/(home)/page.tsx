@@ -3,9 +3,9 @@
 import { Button } from '@/components/Button';
 import { useRouter } from 'next/navigation';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { homeQueryOptions } from './queries/auth';
 import { useToastStore } from '@/components/Toast/toastStore';
 import { PATHS } from '@/constants/paths';
+import { homeQueryOptions } from './queries/auth';
 
 export default function HomePage() {
   const router = useRouter();
